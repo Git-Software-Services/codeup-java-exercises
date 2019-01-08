@@ -9,22 +9,22 @@ public class ConsoleExercises {
         Scanner scanner = new Scanner (System.in).useDelimiter("\n");
 //
 
-//        System.out.print("Enter a number.");
-//        int userInput = scanner.nextInt();
-//        System.out.format("The number you entered is %d \n", userInput);
-//
-//
-//        System.out.print("Enter a word: ");
-//        String firstWord = scanner.next();
-//        System.out.print("Enter a second word: ");
-//        String secondWord = scanner.next();
-//        System.out.print("Enter a third word: ");
-//        String thirdWord = scanner.next();
-//        System.out.format("The words you entered were: \n%s \n%s \n%s\n", firstWord, secondWord, thirdWord);
-//
-//        System.out.print("Enter a sentence: ");
-//        String userSentence = scanner.next();
-//        System.out.format("The sentence you entered was: \n%s", userSentence);
+        System.out.print("Enter a number.");
+        int userInput = scanner.nextInt();
+        System.out.format("The number you entered is %d \n", userInput);
+
+
+        System.out.print("Enter a word: ");
+        String firstWord = scanner.next();
+        System.out.print("Enter a second word: ");
+        String secondWord = scanner.next();
+        System.out.print("Enter a third word: ");
+        String thirdWord = scanner.next();
+        System.out.format("The words you entered were: \n%s \n%s \n%s\n", firstWord, secondWord, thirdWord);
+
+        System.out.print("Enter a sentence: ");
+        String userSentence = scanner.next();
+        System.out.format("The sentence you entered was: \n%s", userSentence);
 
 
         System.out.print("Guess classroom width:");
