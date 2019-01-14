@@ -3,35 +3,37 @@ import java.util.Scanner;
 public class MethodPracticeExercises {
     public static void main(String[] args){
 
-       char resultOfLastChar = lastChar("Oh my!");
-        System.out.println(resultOfLastChar);
+//       char resultOfLastChar = lastChar("Oh my!");
+//        System.out.println(resultOfLastChar);
+//
+//        char resultOfFirstChar = firstChar ("What the mess");
+//        System.out.println(resultOfFirstChar);
+//
+//        char resultOfSecondChar = secondChar ("What the mess");
+//        System.out.println(resultOfSecondChar);
+//
+//        char resultOfSecondToLastChar = secondToLastChar("What in the world");
+//        System.out.println(resultOfSecondToLastChar);
+//
+//        System.out.println("The user wants to continue: " + userWantsToContinue());
+//
+//        System.out.println("The result of the isEven function is : " + isEven(3));
+//
+//        System.out.println("The result of the isOdd function is : " + isOdd(3));
+//
+//        System.out.println("The result of the countOdds function is : " + countOdds(3, 10));
+//
+//        System.out.println("The result of the countEvens function is : " + countEvens(3, 10));
+//
+//        System.out.println("The result of isVowel is: " + isVowel("g"));
+//
+//        System.out.println("The result of hasVowel is: " + hasVowels("oh"));
+//
+//        System.out.println("The result of countVowel is: " + countVowels("oh my goodness!"));
+//
+//        fizzBuzz(20);
 
-        char resultOfFirstChar = firstChar ("What the mess");
-        System.out.println(resultOfFirstChar);
-
-        char resultOfSecondChar = secondChar ("What the mess");
-        System.out.println(resultOfSecondChar);
-
-        char resultOfSecondToLastChar = secondToLastChar("What in the world");
-        System.out.println(resultOfSecondToLastChar);
-
-        System.out.println("The user wants to continue: " + userWantsToContinue());
-
-        System.out.println("The result of the isEven function is : " + isEven(3));
-
-        System.out.println("The result of the isOdd function is : " + isOdd(3));
-
-        System.out.println("The result of the countOdds function is : " + countOdds(3, 10));
-
-        System.out.println("The result of the countEvens function is : " + countEvens(3, 10));
-
-        System.out.println("The result of isVowel is: " + isVowel("g"));
-
-        System.out.println("The result of hasVowel is: " + hasVowels("oh"));
-
-        System.out.println("The result of countVowel is: " + countVowels("oh my goodness!"));
-
-        System.out.println(fizzBuzz(20));
+//        System.out.println("The result of isPrime is: " + isPrime(3));
     } //end of main
 
     //Write a method named lastChar() that takes a string as an input and returns the last letter as a character data type.
@@ -134,29 +136,24 @@ public class MethodPracticeExercises {
     }
 
     //Write a solution to FizzBuzz using recursion instead of a loop.
-    public static int fizzBuzz(int number) {
-        if (number <= 0) {
-            return 0;
-        }else {
+    public static void fizzBuzz(int number) {
+        if (number > 0) {
+
             if (number % 15 == 0) {
-//                output += "FizzBuzz\n";
                 System.out.println("FizzBuzz");
             } else if (number % 3 == 0) {
-//                output += "Fizz\n";
                 System.out.println("Fizz");
             } else if (number % 5 == 0) {
-//                output += "Buzz\n";
                 System.out.println("Buzz");
             } else if (number % 3 != 0 && number % 5 != 0) {
-//                output += number + "\n";
                 System.out.println(number);
             }
             number -= 1;
+            fizzBuzz(number);
         }
-        return fizzBuzz(number);
-
     }//end of fizzbuzz
 
+    //Write a method named isPrime() that that accepts in an integer number and returns a boolean if the number is evenly divisible only by either 1 or the number itself.
 
 
 
@@ -175,8 +172,6 @@ public class MethodPracticeExercises {
 
 
 
-//Write a solution to FizzBuzz using recursion instead of a loop.
-//
-//Write a method named isPrime() that that accepts in an integer number and returns a boolean if the number is evenly divisible only by either 1 or the number itself.
+
 //
 //Write a method named getTwentyPrimes() that returns a string containing the first 20 prime numbers, each separated by a comma. Output: "1, 2, 3, 5, 7, 11, 13, 17, 19"... until we have a total count of 20 primes in the string.
