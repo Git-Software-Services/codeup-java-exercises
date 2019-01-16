@@ -28,12 +28,12 @@ public class Movie {
         this.category = category;
     }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 ////        create a new object Movie >> instantiate Movie class >> give it parameters
 //        Movie citizen = new Movie("Citizen Kane", "Drama");
 ////        check if have constructor and getter method >> know data type of return >> call get method on object
 //        String movieName = citizen.getName();
 ////        sout variable if string
 //        System.out.println(movieName);
-    }
+//    }
 }
