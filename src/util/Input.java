@@ -39,7 +39,7 @@ public class Input {
         return false;
     }
 
-    int getInt(int min, int max) {
+    public int getInt(int min, int max) {
 
         System.out.format("Enter a number between %s and %s: \n", min, max);
         int userAnswer = scanner.nextInt();
@@ -50,7 +50,7 @@ public class Input {
         }
     }
 
-    int getInt(String prompt, int min, int max) {
+    public int getInt(String prompt, int min, int max) {
 
         System.out.println(prompt);
         int userAnswer = scanner.nextInt();
@@ -61,12 +61,12 @@ public class Input {
         }
     }
 
-    int getInt() {
+     public int getInt() {
         System.out.println("Enter a number...");
         return scanner.nextInt();
     }
 
-    int getInt(String prompt) {
+    public int getInt(String prompt) {
         System.out.println(prompt);
         return scanner.nextInt();
     }
@@ -108,9 +108,9 @@ public class Input {
     }
 
 
-//    public static void main(String[] args) {
-////        Input myInput = new Input();
-////
+    public static void main(String[] args) {
+        Input myInput = new Input();
+//
 //////        myInput.getString();
 ////        myInput.getString("Enter your name: \n");
 //////        myInput.yesNo();
@@ -118,12 +118,12 @@ public class Input {
 //////        myInput.getInt(4, 10);
 ////        myInput.getInt("Enter a number between 4 and 10: \n", 4, 10);
 //////        myInput.getInt();
-////        myInput.getInt("Enter a number: \n");
+        myInput.getInt("Enter a number: \n");
 //////        myInput.getDouble(2.3, 4.6);
 ////        myInput.getDouble("Enter a double number between 2.3 and 4.6:\n ",2.3, 4.6);
 //////        myInput.getDouble();
 ////        myInput.getDouble("Enter a double number: \n");
 
-////    }//End of main
+    }//End of main
 
 }//End of Class

@@ -6,7 +6,7 @@ public class CircleApp {
     Input userInput = new Input();
 
 
-//    public static void main(String[] args) {
-//
-//    }
+    public static void main(String[] args) {
+
+    }
 }
