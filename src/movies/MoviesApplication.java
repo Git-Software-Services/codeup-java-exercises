@@ -2,6 +2,7 @@ package movies;
 
 import util.Input;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MoviesApplication {
@@ -9,42 +10,59 @@ public class MoviesApplication {
     public static void getMovieCategory(int movieCategorySelection) {
     Input input = new Input();
 
+        int numberOfMovies = MoviesArray.findAll().length;
+        Movie [] newMoviesArray = Arrays.copyOf(MoviesArray.findAll(), numberOfMovies);
+
             String userInput = String.valueOf(movieCategorySelection);
                     System.out.format("user input is %s\n", userInput);
 
         if (movieCategorySelection < 6 || movieCategorySelection == 9){
                 if(userInput.equals("0")) {
+                    System.exit(0);
                 }else if (userInput.equals("9")) {
                     System.out.println("adding a movie");
-                    addMovie();
+//                    addMovie();
+
+                    Scanner scan = new Scanner(System.in).useDelimiter("\n");
+                    System.out.format("Input your movie title:");
+                    String userMovieTitle = scan.next();
+                    System.out.format("Input your movie category:");
+                    String userMovieCategory = scan.next();
+                    numberOfMovies = newMoviesArray.length;
+                    newMoviesArray = Arrays.copyOf(newMoviesArray, numberOfMovies);
+
+                    Movie newUserMovie = new Movie(userMovieTitle, userMovieCategory);
+                    newMoviesArray [newMoviesArray.length - 1] = newUserMovie;
+
+
+//                    String movieName = newUserMovie.getName();
+//                    String movieCategory = newUserMovie.getCategory();
+                    System.out.format("You added %s to the %s category\n",userMovieTitle, userMovieCategory);
+
                 }else if (userInput.equals("1")){
-                    for(Movie singleMovie: MoviesArray.findAll()){
+                    for(Movie singleMovie: newMoviesArray){
                         System.out.println(singleMovie.getName()  + " " + singleMovie.getCategory());
                     }
                 }else if (userInput.equals("2")){
-                    for(Movie singleMovie: MoviesArray.findAll()){
-                        singleMovie.getCategory();
+                    for(Movie singleMovie: newMoviesArray){
                         if(singleMovie.getCategory().equals("animated")){
                             System.out.println(singleMovie.getName());
                         }
                     }
                 }else if (userInput.equals("3")){
-                    for(Movie singleMovie: MoviesArray.findAll()){
-                        singleMovie.getCategory();
+                    for(Movie singleMovie: newMoviesArray){
                         if(singleMovie.getCategory().equals("drama")) {
                             System.out.println(singleMovie.getName());
                         }
                     }
                 }else if (userInput.equals("4")){
-                        for(Movie singleMovie: MoviesArray.findAll()){
-                            singleMovie.getCategory();
+                        for(Movie singleMovie: newMoviesArray){
                             if(singleMovie.getCategory().equals("horror")) {
                                 System.out.println(singleMovie.getName());
                             }
                          }
                 }else if (userInput.equals("5")){
-                            for(Movie singleMovie: MoviesArray.findAll()) {
-                                singleMovie.getCategory();
+                            for(Movie singleMovie: newMoviesArray) {
                                 if (singleMovie.getCategory().equals("scifi")) {
                                     System.out.println(singleMovie.getName());
                                 }
@@ -53,24 +71,26 @@ public class MoviesApplication {
                     System.out.println("Enter a valid option");
 
                 }
-        }  getMovieCategory(input.getInt("Choose another category or enter 1 to exit"));
+        }  getMovieCategory(input.getInt("Choose another category or enter 0 to exit"));
 
 
     }
 
-    public static void addMovie(){
-        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+//    public static void addMovie(){
+//        int numberOfMovies = MoviesArray.findAll().length + 1;
 
-
-        System.out.format("Input your movie title:");
-        String userMovieTitle = scan.next();
-        System.out.format("Input your movie category:");
-        String userMovieCategory = scan.next();
-        Movie newUserMovie = new Movie(userMovieTitle, userMovieCategory);
-        String movieName = newUserMovie.getName();
-        String movieCategory = newUserMovie.getCategory();
-        System.out.format("You added %s to the %s category\n",movieName, movieCategory);
-    }
+//        Movie [] newMoviesArray = Arrays.copyOf(MoviesArray.findAll(), numberOfMovies);
+//        Scanner scan = new Scanner(System.in).useDelimiter("\n");
+//        System.out.format("Input your movie title:");
+//        String userMovieTitle = scan.next();
+//        System.out.format("Input your movie category:");
+//        String userMovieCategory = scan.next();
+//        Movie newUserMovie = new Movie(userMovieTitle, userMovieCategory);
+//        newMoviesArray [newMoviesArray.length - 1] = newUserMovie;
+//        String movieName = newUserMovie.getName();
+//        String movieCategory = newUserMovie.getCategory();
+//        System.out.format("You added %s to the %s category\n",movieName, movieCategory);
+//    }
 
 
     public static void main(String[] args) {
