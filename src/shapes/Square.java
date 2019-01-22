@@ -12,20 +12,20 @@ public class Square extends Quadrilateral{
     }
 
     @Override
-    void setWidth(double width) {
+    public void setWidth(double width) {
         this.width = width;
     }
 
     @Override
     public double getPerimeter() {
-        double perimeter = width * 4;
-        return perimeter;
+        return width * 4;
+
     }
 
     @Override
     public double getArea() {
-        double area = (int) Math.pow(width, 2);
-        return area;
+        return (int) Math.pow(width, 2);
+
     }
 //    public int globalSideVar;
 

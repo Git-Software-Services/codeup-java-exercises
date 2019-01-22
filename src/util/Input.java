@@ -1,5 +1,6 @@
 package util;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Input {
@@ -9,12 +10,12 @@ public class Input {
         return scanner.next();
     }
 
-    String getString(String prompt){
+    public String getString(String prompt){
         System.out.println(prompt);
         return scanner.next();
     }
 
-    boolean yesNo() {
+    public boolean yesNo() {
         String userInput = scanner.next();
         if (userInput.equalsIgnoreCase("yes") ||
                 userInput.equalsIgnoreCase("y") ||
@@ -26,7 +27,7 @@ public class Input {
         return false;
     }
 
-    boolean yesNo(String prompt) {
+    public boolean yesNo(String prompt) {
         System.out.println(prompt);
         String userInput = scanner.next();
         if (userInput.equalsIgnoreCase("yes") ||
@@ -38,70 +39,127 @@ public class Input {
         }
         return false;
     }
+
+
 
     public int getInt(int min, int max) {
 
         System.out.format("Enter a number between %s and %s: \n", min, max);
-        int userAnswer = scanner.nextInt();
-        if (userAnswer >= min && userAnswer <= max) {
-            return userAnswer;
-        } else {
-          return getInt(min, max);
+        int userAnswer = 0;
+        try {
+            userAnswer = Integer.valueOf(scanner.next());
+
+            if (userAnswer >= min && userAnswer <= max) {
+                return userAnswer;
+            } else {
+                return getInt(min, max);
+            }
         }
+        catch(NumberFormatException e){
+            System.out.println("Invalid entry, please enter a number");
+        }return userAnswer;
     }
+
+
 
     public int getInt(String prompt, int min, int max) {
 
         System.out.println(prompt);
-        int userAnswer = scanner.nextInt();
-        if (userAnswer >= min && userAnswer <= max) {
-            return userAnswer;
-        } else {
-            return getInt(min, max);
+        int userAnswer = 0;
+        try {
+            userAnswer = Integer.valueOf(scanner.next());
+            if (userAnswer >= min && userAnswer <= max) {
+                return userAnswer;
+            } else {
+                return getInt(min, max);
+            }
+        }
+        catch(NumberFormatException e){
+            System.out.println("Invalid entry, please enter a number");
+        }
+        catch(InputMismatchException e){
+            System.out.println("Invalid entry, please enter a number");
+        }return userAnswer;
+    }
+
+
+
+     public int getInt() {
+        String userInput;
+        System.out.println("Enter a number...");
+        try {
+            userInput = scanner.next();
+            return Integer.valueOf(userInput);
+        }
+        catch (Exception e){
+            System.out.println("Invalid entry, please enter a number");
+            return getInt();
         }
     }
 
-     public int getInt() {
-        System.out.println("Enter a number...");
-        return scanner.nextInt();
-    }
+
 
     public int getInt(String prompt) {
         System.out.println(prompt);
-        return scanner.nextInt();
+        return getInt();
     }
 
-    double getDouble(double min, double max) {
 
+
+    public double getDouble(double min, double max) {
+        double userAnswer ;
         System.out.format("Enter a number between %s and %s: ", min, max);
-        double userAnswer = scanner.nextDouble();
-        if (userAnswer >= min && userAnswer <= max) {
-            return userAnswer;
-        } else {
-            return getDouble(min, max);
+        try {
+             userAnswer = Double.valueOf(scanner.next());
+            if (userAnswer >= min && userAnswer <= max) {
+                return userAnswer;
+            } else {
+                return getDouble(min, max);
+            }
+        }
+        catch (NumberFormatException e){
+            System.out.println("Invalid entry, please enter a number");
+            return getDouble();
         }
     }
 
-    double getDouble(String prompt, double min, double max) {
 
+
+    public double getDouble(String prompt, double min, double max) {
+        double userAnswer = 0;
         System.out.println(prompt);
-        double userAnswer = scanner.nextDouble();
-        if (userAnswer >= min && userAnswer <= max) {
-            return userAnswer;
-        } else {
-            return getDouble(min, max);
+        try {
+            userAnswer = Double.valueOf(scanner.next());
+            if (userAnswer >= min && userAnswer <= max) {
+                return userAnswer;
+            } else {
+                return getDouble(min, max);
+            }
+        }
+        catch (NumberFormatException e){
+            System.out.println("Invalid entry, please enter a double number");
+        }return userAnswer;
+    }
+
+
+
+    public double getDouble() {
+        String userAnswer;
+        try {
+            userAnswer = scanner.next();
+            return Double.valueOf(userAnswer);
+        }
+        catch (Exception e){
+            System.out.println("Invalid entry, please enter a double number");
+            return getDouble();
         }
     }
 
-    double getDouble(){
-        System.out.println("Enter a double number...");
-        return scanner.nextDouble();
+    public double getDouble(String prompt) {
+        System.out.println(prompt);
+       return getDouble();
     }
 
-    double getDouble(String prompt){
-        System.out.println(prompt);
-        return scanner.nextDouble();
-    }
 
     public Input(){
         scanner = new Scanner(System.in).useDelimiter("\n");
