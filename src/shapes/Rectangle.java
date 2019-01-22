@@ -16,13 +16,13 @@ public class Rectangle extends Quadrilateral implements Measurable{
         this.width = width;
     }
 
-    @Override
+
     public double getPerimeter() {
         return  width + width + length + length;
 
     }
 
-    @Override
+
     public double getArea() {
         return width * length;
 

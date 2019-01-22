@@ -107,7 +107,7 @@ public class Input {
 
 
     public double getDouble(double min, double max) {
-        double userAnswer ;
+        double userAnswer;
         System.out.format("Enter a number between %s and %s: ", min, max);
         try {
              userAnswer = Double.valueOf(scanner.next());
